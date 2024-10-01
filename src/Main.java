@@ -27,6 +27,7 @@ public class Main {
                         "4) Salir de la tienda\n" +
                         "Digite la opcion deseada: ");
                 opc = teclado.nextInt();
+                teclado.nextLine();
 
                 switch (opc) {
                     case 1:
@@ -37,7 +38,7 @@ public class Main {
 
                     case 2:
                         System.out.println("Ingrese el nombre del producto: ");
-                        producto.setNombre(teclado.next());
+                        producto.setNombre(teclado.nextLine());
                         System.out.println("Ingrese el precio del producto: ");
                         producto.setPrecio(teclado.nextDouble());
                         System.out.println("Ingrese la cantidad de productos existentes: ");
@@ -51,6 +52,14 @@ public class Main {
 
                     case 3:
 
+                        for (int codigo : PrecioProductos.keySet()) {
+                            System.out.println("Codigo de producto: " + codigo);
+                        }
+
+                        System.out.println("Ingrese el codigo del producto que desea eliminar: ");
+                        int claveBorrar = teclado.nextInt();
+
+                        PrecioProductos.remove(claveBorrar);
                         break;
 
                     case 4:
